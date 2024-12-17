@@ -7,7 +7,7 @@ addEventHandler("onPlayerJoin",root,function()
   fetchRemote("https://ipinfo.io/widget/demo/"..ip,function(e,re)
     if Ip[ip] then kickPlayer(client, "XoopAC", "\nKicked by XoopAC\nDisable your VPN\n") return end
     local data = fromJSON(re)
-    if data["data"]["privacy"]["vpn"] == "true" or data["data"]["privacy"]["proxy"] == "true"  then
+    if data["data"]["privacy"]["vpn"] == "true" or data["data"]["privacy"]["proxy"] == "true" or data["data"]["privacy"]["hosting"] == "true"   then
       Ip[ip] = true
       kickPlayer(client, "XoopAC", "\nKicked by XoopAC\nDisable your VPN\n")
     end 
